@@ -35,20 +35,20 @@ const objectsScehme = mongoose.Schema(
   }
 )
 
-server.get("/api/:type/:id?", (req, res) =>
+server.get("/api/:type/:id?", (req, res) => {
   require("./crud/crudGet.js")(req).then(data => res.send(data))
-)
+})
 
-server.post("/api/:type", (req, res) =>
+server.post("/api/:type", (req, res) => {
   require("./crud/crudCreate.js")(req).then(data => res.send(data))
-)
+})
 
-server.put("/api/:type/:id?", (req, res) =>
+server.put("/api/:type/:id?", (req, res) => {
   require("./crud/crudUpdate.js")(req).then(data => res.send(data))
-)
+})
 
-server.delete("/api/:type/:id?", (req, res) =>
+server.delete("/api/:type/:id?", (req, res) => {
   require("./crud/crudDelete.js")(req).then(data => res.send(data))
-)
+})
 
 server.listen(port, () => console.log(`Server listening on ${port}!`))
